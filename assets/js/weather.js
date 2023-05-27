@@ -11,7 +11,7 @@ let cityLocation = dom.getElementById('city-name');
 let weatherImage = dom.getElementById('weather-image');
 
 async function getKey(){
-    await fetch(`../downloads/test.txt`)
+    await fetch(`https://dev.screencraft.net.au/~parkjong/assets/downloads/test.txt`)
         .then((res) => res.text() )
         .then((data)=> console.log(data));
 }
