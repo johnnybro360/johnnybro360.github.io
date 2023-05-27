@@ -10,14 +10,14 @@ let description = dom.getElementById('description');
 let cityLocation = dom.getElementById('city-name');
 let weatherImage = dom.getElementById('weather-image');
 
-async function getKey(){
-    await fetch(`https://dev.screencraft.net.au/~parkjong/assets/downloads/test.txt`)
-        .then((res) => res.text() )
-        .then((data)=> console.log(data))
-        .catch((err) => console.log(err));
-}
-
-window.onload = getKey;
+// async function getKey(){
+//     await fetch(`https://dev.screencraft.net.au/~parkjong/assets/downloads/test.txt`)
+//         .then((res) => res.text() )
+//         .then((data)=> console.log(data))
+//         .catch((err) => console.log(err));
+// }
+//
+// window.onload = getKey;
 
 async function getWeatherDetails() {
     let cityName = cityChoice.value;
