@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../assets/css/reset.css" rel="stylesheet">
+    <link href="../../assets/css/portfolio.css" rel="stylesheet">
+    <!-- JavScript -->
+    <script defer src="../../assets/js/times-table.js" type="application/javascript"></script>
+
+    <title>Demonstrations | Portfolio - Jonghun Park</title>
+</head>
+
+<body>
+
+<div class="content">
+
+    <!-- HEADER  -->
+    <header class="site-header">
+        <div class="logo-box">
+            <img alt="Site Logo" src="../../assets/img/heart.svg">
+            <h2>Jonghun Park</h2>
+        </div>
+        <nav class="site-navigation">
+            <ul>
+                <li><a href="..">Home</a></li>
+                <li><a href="../../contact">Contact Me</a></li>
+                <li><a href="../../projects">Projects</a></li>
+                <li><a href="../../demos">Demonstrations</a></li>
+                <li><a href="../../résumé">Résumé</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--  MAIN  -->
+
+    <main class="wrapper">
+        <div class="grid grid-cols-5 h-full">
+            <section class="col-start-1 flex items-center justify-center">
+                <a href="../"><img alt="back button" class="h-10 w-10" src="../../assets/img/go_back.png"></a>
+            </section>
+            <section class="p-4 bg-[#44273F] col-start-2 col-span-3 flex flex-col gap-3.5 h-full">
+                <h3 class="font-['Space Grotesk'] text-2xl text-[#FFD7F3] text-center">Times Table</h3>
+                <form action="#" id="simpleForm">
+                    <div class="subject-dropdown">
+                        <select id="selectDropdown"
+                                name="select-field">
+                            <option value="">-- select a number --</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="flex flex-col grow-0 items-center gap-2 overflow-auto" id="outputZone">
+                </div>
+            </section>
+        </div>
+        <section class="project-notice">
+            <h4>All information on this page is faked for the purpose of assessment of HTML, CSS and JS skills
+                only.</h4>
+        </section>
+    </main>
+
+    <!--  FOOTER  -->
+    <footer class="site-footer">
+        <div class="footer-image">
+            <img alt="Footer Logo" src="../../assets/img/wink.svg">
+        </div>
+        <section class="footer-main">
+            <div class="footer-main-copyright">
+                <h4>&copy; Copyright 2023, Jonghun Park, All rights reserved.</h4>
+                <p>Please respect my copyright, and be given permission to make use of the content via the contact page
+                    before use.</p>
+            </div>
+
+            <div class="footer-main-link">
+                <ul>
+                    <li><a href="../../contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <div class="sns-link">
+                    <ul>
+                        <li><a href="#"><img alt="GitHub" class="link-img" src="../../assets/img/github.svg"></a></li>
+                        <li><a href="#"><img alt="Facebook" class="link-img" src="../../assets/img/facebook.svg"></a>
+                        </li>
+                        <li><a href="#"><img alt="Twitter" class="link-img" src="../../assets/img/twitter.svg"></a></li>
+                        <li><a href="#"><img alt="TikTok" class="link-img" src="../../assets/img/tiktok.svg"></a></li>
+                        <li><a href="#"><img alt="Steam" class="link-img" src="../../assets/img/steam.svg"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="footer-link">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../../contact">Contact Me</a></li>
+                <li><a href="../../projects">Projects</a></li>
+                <li><a href="../../résumé">Résumé</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script>
+    document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>

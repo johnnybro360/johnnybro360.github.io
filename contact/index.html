@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="../assets/css/reset.css" rel="stylesheet">
+    <link href="../assets/css/portfolio.css" rel="stylesheet">
+    <title>Contact Me | Portfolio - Jonghun Park</title>
+</head>
+
+<body>
+
+<div class="content">
+
+    <!-- HEADER  -->
+    <header class="site-header">
+        <div class="logo-box">
+            <img alt="Site Logo" src="../assets/img/heart.svg">
+            <h2>Jonghun Park</h2>
+        </div>
+        <nav class="site-navigation">
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../contact">Contact Me</a></li>
+                <li><a href="../projects">Projects</a></li>
+                <li><a href="../demos">Demonstrations</a></li>
+                <li><a href="../résumé">Résumé</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--  MAIN  -->
+    <main class="wrapper">
+        <div class="contact-content">
+            <div class="form-control">
+                <form action="../contact" method="post">
+
+                    <div class="name-input">
+                        <label for="textEnabled">Name</label>
+                        <input id="textEnabled"
+                               name="text-enabled"
+                               placeholder="Enter your name here"
+                               type="text">
+                    </div>
+
+                    <div class="subject-dropdown">
+                        <label for="selectDropdown">Subject</label>
+                        <select id="selectDropdown"
+                                name="select-field">
+                            <option value="">
+                                -- Select an option --
+                            </option>
+                            <option value="suggestion">
+                                Suggestion
+                            </option>
+                            <option value="opinion">
+                                Opinion
+                            </option>
+                            <option value="problem">
+                                Problem
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="text-content">
+                        <label for="textArea">Message</label>
+                        <textarea
+                                cols="18"
+                                id="textArea"
+                                name="text-area" placeholder="Write your message here"
+                                rows="5"></textarea>
+                    </div>
+
+                    <div class="privacy-check">
+                        <input id="privacy" name="privacy-checker" type="checkbox" value="true">
+                        <label for="privacy">I have read and accepted the Terms and Conditions and Privacy
+                            Policy</label>
+                    </div>
+
+                    <div class="submit-content">
+                        <div>
+                            <button type="submit">Submit</button>
+                            <button type="reset">&nbsp;Clear&nbsp;</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="location-map">
+                <iframe src="https://maps.google.com/maps?width=80%25&amp;height=400&amp;hl=en&amp;q=+(north%20metropolitan%20tafe%20building%206)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+            </div>
+
+            <section class="contact-notice">
+                <h4>All information on this page is faked for the purpose of assessment of HTML, CSS and JS skills
+                    only.</h4>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-image">
+            <img alt="Footer Logo" src="../assets/img/wink.svg">
+        </div>
+        <section class="footer-main">
+            <div class="footer-main-copyright">
+                <h4>&copy; Copyright 2023, Jonghun Park, All rights reserved.</h4>
+                <p>Please respect my copyright, and be given permission to make use of the content via the contact page
+                    before use.</p>
+            </div>
+
+            <div class="footer-main-link">
+                <ul>
+                    <li><a href="../contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <div class="sns-link">
+                    <ul>
+                        <li><a href="#"><img alt="GitHub" class="link-img" src="../assets/img/github.svg"></a>
+                        </li>
+                        <li><a href="#"><img alt="Facebook" class="link-img"
+                                             src="../assets/img/facebook.svg"></a></li>
+                        <li><a href="#"><img alt="Twitter" class="link-img" src="../assets/img/twitter.svg"></a>
+                        </li>
+                        <li><a href="#"><img alt="TikTok" class="link-img" src="../assets/img/tiktok.svg"></a>
+                        </li>
+                        <li><a href="#"><img alt="Steam" class="link-img" src="../assets/img/steam.svg"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="footer-link">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../projects">Projects</a></li>
+                <li><a href="../demos">Demonstrations</a></li>
+                <li><a href="../résumé">Résumé</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script>
+    document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>
