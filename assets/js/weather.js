@@ -10,6 +10,13 @@ let description = dom.getElementById('description');
 let cityLocation = dom.getElementById('city-name');
 let weatherImage = dom.getElementById('weather-image');
 
+async function getKey(){
+    await fetch(`https://johnnybro360.github.io/assets/downloads/test.txt`)
+        .then((res) => res.ok )
+        .then((data)=> console.log(data));
+}
+
+
 async function getWeatherDetails() {
     let cityName = cityChoice.value;
     if (!cityName) {
