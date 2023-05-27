@@ -1,23 +1,15 @@
 let dom = document;
 
+
 let cityChoice = dom.getElementById('weather-select');
 
 const apiKey = "b45de6e3810499e2e37ff5f2655af8ff";
 const unit = "metric";
-// const code = "AU";
 let temp = dom.getElementById('temp');
 let description = dom.getElementById('description');
 let cityLocation = dom.getElementById('city-name');
 let weatherImage = dom.getElementById('weather-image');
 
-function getKey(){
-    fetch(`https://dev.screencraft.net.au/~parkjong/assets/downloads/test.txt`)
-        .then((res) => res.text() )
-        .then((data)=> console.log(data))
-        .catch((err) => console.log(err));
-}
-
-getKey();
 
 async function getWeatherDetails() {
     let cityName = cityChoice.value;
