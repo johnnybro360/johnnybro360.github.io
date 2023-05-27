@@ -21,19 +21,15 @@ async function getWeatherDetails() {
             return resp.json()
         }) // Convert data to json
         .then(function (data) {
-            // console.log(data);
             temp.innerHTML = `${data['main']['temp'].toFixed(1)}&deg;C`;
             cityLocation.innerHTML = `${data['name']}, ${data['sys']['country']}`;
             description.innerHTML = `${data['weather'][0]['description']}`;
-            // cityLocation.innerHTML = `${cityName.charAt(0).toUpperCase()
-            // + cityName.slice(1)}, ${code}`;
             weatherImage.src = `../../assets/img/weather/${data['weather'][0]['icon']}.svg`;
             if (data['main']['temp'] >= 26) {
                 temp.style.color = '#C3272B';
             } else {
                 temp.style.color = '#22A7F0';
             }
-
         })
         .catch(function (err) {
             console.log(err)
