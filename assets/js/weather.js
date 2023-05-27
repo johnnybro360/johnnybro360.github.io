@@ -13,7 +13,8 @@ let weatherImage = dom.getElementById('weather-image');
 async function getKey(){
     await fetch(`https://dev.screencraft.net.au/~parkjong/assets/downloads/test.txt`)
         .then((res) => res.text() )
-        .then((data)=> console.log(data));
+        .then((data)=> console.log(data))
+        .catch((err) => console.log(err));
 }
 
 window.onload = getKey;
