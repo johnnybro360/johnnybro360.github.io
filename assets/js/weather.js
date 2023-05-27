@@ -16,6 +16,7 @@ async function getKey(){
         .then((data)=> console.log(data));
 }
 
+window.onload = getKey;
 
 async function getWeatherDetails() {
     let cityName = cityChoice.value;
