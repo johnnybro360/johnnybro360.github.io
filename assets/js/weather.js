@@ -27,7 +27,7 @@ async function getWeatherDetails() {
             // cityLocation.innerHTML = `${cityName.charAt(0).toUpperCase()
             // + cityName.slice(1)}, ${code}`;
             weatherImage.src = `../../assets/img/weather/${data['weather'][0]['icon']}.svg`;
-            if (data['main']['temp'] >= 30) {
+            if (data['main']['temp'] >= 26) {
                 temp.style.color = '#C3272B';
             } else {
                 temp.style.color = '#22A7F0';
