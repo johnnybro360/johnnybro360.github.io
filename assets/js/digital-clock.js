@@ -72,15 +72,16 @@ function twelveHourDisplay(){
     } else {
         amPm.innerText = `AM`;
     }
-    setInterval(() => {
-        date = new Date();
-        hour = date.getHours();
-        let hourString = hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-    }, 1000)
+    // setInterval(() => {
+    //     date = new Date();
+    //     hour = date.getHours();
+    //     let hourString = hour.toString();
+    //     if (hourString.length === 1) {
+    //         hourString = '0' + hourString;
+    //     }
+    //     clockHour.innerText = hourString;
+    // }, 1000)
+    updateHour()
 }
 
 twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
@@ -94,10 +95,14 @@ function twentyFourHourDisplay(){
     }
     clockHour.innerText = hourString;
     amPm.innerText = '';
+    updateHour()
+}
+
+function updateHour(){
     setInterval(() => {
-        date = new Date();
-        hour = date.getHours();
-        let hourString = hour.toString();
+        this.date = new Date();
+        this.hour = this.date.getHours();
+        let hourString = this.hour.toString();
         if (hourString.length === 1) {
             hourString = '0' + hourString;
         }
