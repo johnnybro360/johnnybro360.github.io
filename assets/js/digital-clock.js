@@ -42,7 +42,7 @@ setInterval(() => {
     const date = new Date();
     clockDay.innerText = `${days[date.getDay()]}`;
     clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
-}, 1000)
+}, 10000)
 
 
 twelveHourButton.addEventListener('click', twelveHourDisplay)
