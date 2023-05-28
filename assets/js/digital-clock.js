@@ -28,79 +28,61 @@ setInterval(flashOff, 500);
 
 setInterval(flashOn, 1000);
 
-setInterval(() => {
-    const date = new Date();
+function displayClock(newDate) {
+    const date = newDate;
     const minute = date.getMinutes();
+    const day = `${days[date.getDay()]}`;
+    const monthDate = `${months[date.getMonth()]} ${date.getDate()}`;
+    clockDay.innerText = `${day}`;
+    clockDate.innerText = `${monthDate}`;
     let minuteString = minute.toString()
     if (minuteString.length === 1) {
         minuteString = '0' + minuteString;
     }
     clockMin.innerText = minuteString;
-}, 1000)
-
-setInterval(() => {
-    const date = new Date();
-    clockDay.innerText = `${days[date.getDay()]}`;
-    clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
-}, 10000)
-
-
-twelveHourButton.addEventListener('click', twelveHourDisplay)
-
-function twelveHourDisplay() {
-    const date = new Date();
-    const hour = date.getHours() % 12 || 12;
-    let hourString = hour.toString()
-    if (hourString.length === 1) {
-        hourString = '0' + hourString;
-    }
-    clockHour.innerText = hourString;
-
-    if (date.getHours() >= 12 && date.getHours() <= 23) {
-        amPm.innerText = `PM`;
+    if (twentyFourHourButton.checked) {
+        return function twentyFourHour() {
+            const hour = date.getHours();
+            let hourString = hour.toString()
+            if (hourString.length === 1) {
+                hourString = '0' + hourString;
+            }
+            clockHour.innerText = hourString;
+            amPm.innerText = '';
+        }
     } else {
-        amPm.innerText = `AM`;
+        return function twelveHour() {
+            const hour = date.getHours() % 12 || 12;
+            let hourString = hour.toString()
+            if (hourString.length === 1) {
+                hourString = '0' + hourString;
+            }
+            clockHour.innerText = hourString;
+            if (date.getHours() >= 12 && date.getHours() <= 23) {
+                amPm.innerText = `PM`;
+            } else {
+                amPm.innerText = `AM`;
+            }
+        }
     }
 }
 
-twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
-
-function twentyFourHourDisplay() {
-    const date = new Date();
-    const hour = date.getHours();
-    let hourString = hour.toString()
-    if (hourString.length === 1) {
-        hourString = '0' + hourString;
-    }
-    clockHour.innerText = hourString;
-    amPm.innerText = '';
+window.onload = () => {
+    const updateHour = displayClock(new Date());
+    updateHour();
 }
 
-setInterval(()=>{
-    if (twentyFourHourButton.checked){
-        twentyFourHourDisplay()
-    }
-    else {
-        twelveHourDisplay()
-    }
-}, 1000)
+twelveHourButton.addEventListener('click', () => {
+    const updateHour = displayClock(new Date());
+    updateHour();
+})
+twentyFourHourButton.addEventListener('click', () => {
+    const updateHour = displayClock(new Date());
+    updateHour();
+})
 
-function displayClock(){
-    const date = new Date();
-    const minute = date.getMinutes();
-    const hour = date.getHours();
-    clockDay.innerText = `${days[date.getDay()]}`;
-    clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
-    let minuteString = minute.toString()
-    if (minuteString.length === 1) {
-        minuteString = '0' + minuteString;
-    }
-    clockMin.innerText = minuteString;
-    let hourString = hour.toString()
-    if (hourString.length === 1) {
-        hourString = '0' + hourString;
-    }
-    clockHour.innerText = hourString;
-}
+setInterval(() => {
+    const updateHour = displayClock(new Date());
+    updateHour();
 
-window.onload = displayClock;
+}, 10000);
