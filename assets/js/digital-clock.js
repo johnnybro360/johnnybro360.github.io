@@ -26,16 +26,6 @@ let clockDate = dom.getElementById('date');
 let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
 
-// setInterval(() => {
-//     const date = new Date();
-//     const hour = date.getHours();
-//     let hourString = hour.toString();
-//     if (hourString.length === 1) {
-//         hourString = '0' + hourString;
-//     }
-//     clockHour.innerText = hourString;
-// }, 1000)
-
 setInterval(() => {
     const date = new Date();
     const minute = date.getMinutes();
@@ -72,16 +62,15 @@ function twelveHourDisplay(){
     } else {
         amPm.innerText = `AM`;
     }
-    // setInterval(() => {
-    //     date = new Date();
-    //     hour = date.getHours();
-    //     let hourString = hour.toString();
-    //     if (hourString.length === 1) {
-    //         hourString = '0' + hourString;
-    //     }
-    //     clockHour.innerText = hourString;
-    // }, 1000)
-    updateHour()
+    setInterval(() => {
+        date = new Date();
+        hour = date.getHours() % 12 || 12;
+        let hourString = hour.toString();
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
+        }
+        clockHour.innerText = hourString;
+    }, 1000)
 }
 
 twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
@@ -95,10 +84,6 @@ function twentyFourHourDisplay(){
     }
     clockHour.innerText = hourString;
     amPm.innerText = '';
-    updateHour()
-}
-
-function updateHour(){
     setInterval(() => {
         this.date = new Date();
         this.hour = this.date.getHours();
@@ -109,3 +94,15 @@ function updateHour(){
         clockHour.innerText = hourString;
     }, 1000)
 }
+
+function updateHour(){
+        const date = new Date();
+        const hour = date.getHours();
+        let hourString = hour.toString();
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
+        }
+        clockHour.innerText = hourString;
+    }
+
+    updateHour()
