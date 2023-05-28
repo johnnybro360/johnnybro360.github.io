@@ -44,7 +44,7 @@ setInterval(() => {
         minuteString = '0' + minuteString;
     }
     clockMin.innerText = minuteString;
-}, 300)
+}, 1000)
 
 setInterval(() => {
     const date = new Date();
