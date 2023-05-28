@@ -32,7 +32,6 @@ setInterval(() => {
 }, 1000)
 
 setInterval(() => {
-    const date = new Date();
     const minute = date.getMinutes();
     let minuteString = minute.toString()
     if (minuteString.length === 1) {
@@ -42,7 +41,6 @@ setInterval(() => {
 }, 1000)
 
 setInterval(() => {
-    const date = new Date();
     clockDay.innerText = `${days[date.getDay()]}`;
     clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
 }, 1000)
