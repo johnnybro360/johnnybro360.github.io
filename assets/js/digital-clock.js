@@ -28,13 +28,6 @@ setInterval(flashOff, 500);
 
 setInterval(flashOn, 1000);
 
-
-
-// let date = new Date();
-// setInterval(() => {
-//     date = new Date();
-// }, 1000)
-
 setInterval(() => {
     const date = new Date();
     const minute = date.getMinutes();
@@ -49,7 +42,7 @@ setInterval(() => {
     const date = new Date();
     clockDay.innerText = `${days[date.getDay()]}`;
     clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
-}, 10000)
+}, 1000)
 
 
 twelveHourButton.addEventListener('click', twelveHourDisplay)
@@ -91,3 +84,23 @@ setInterval(()=>{
         twelveHourDisplay()
     }
 }, 1000)
+
+function displayClock(){
+    const date = new Date();
+    const minute = date.getMinutes();
+    const hour = date.getHours();
+    clockDay.innerText = `${days[date.getDay()]}`;
+    clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
+    let minuteString = minute.toString()
+    if (minuteString.length === 1) {
+        minuteString = '0' + minuteString;
+    }
+    clockMin.innerText = minuteString;
+    let hourString = hour.toString()
+    if (hourString.length === 1) {
+        hourString = '0' + hourString;
+    }
+    clockHour.innerText = hourString;
+}
+
+window.onload = displayClock;
