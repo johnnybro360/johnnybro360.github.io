@@ -5,7 +5,6 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const months = ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', 'August'
     , 'September', 'October', 'November', 'December']
 
-const date = new Date();
 
 const colon = dom.getElementById('colon');
 const amPm =dom.getElementById('am-pm');
@@ -26,7 +25,6 @@ let clockDay = dom.getElementById('day')
 let clockDate = dom.getElementById('date');
 let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
-let hour = date.getHours();
 
 setInterval(() => {
     let hourString = hour.toString()
@@ -37,15 +35,17 @@ setInterval(() => {
 }, 1000)
 
 setInterval(() => {
+    const date = new Date();
     const minute = date.getMinutes();
     let minuteString = minute.toString()
     if (minuteString.length === 1) {
         minuteString = '0' + minuteString;
     }
     clockMin.innerText = minuteString;
-}, 100)
+}, 30000)
 
 setInterval(() => {
+    const date = new Date();
     clockDay.innerText = `${days[date.getDay()]}`;
     clockDate.innerText = `${months[date.getMonth()]} ${date.getDate()}`;
 }, 1000)
@@ -56,7 +56,9 @@ const twentyFourHourButton = dom.getElementById('24hr')
 twelveHourButton.addEventListener('click', twelveHourDisplay)
 
 function twelveHourDisplay(){
-    hour = date.getHours() % 12 || 12;
+
+    const date = new Date();
+    const hour = date.getHours() % 12 || 12;
     let hourString = hour.toString()
     if (hourString.length === 1) {
         hourString = '0' + hourString;
@@ -73,7 +75,8 @@ function twelveHourDisplay(){
 twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
 
 function twentyFourHourDisplay(){
-    hour = date.getHours();
+    const date = new Date();
+    const hour = date.getHours();
     let hourString = hour.toString()
     if (hourString.length === 1) {
         hourString = '0' + hourString;
