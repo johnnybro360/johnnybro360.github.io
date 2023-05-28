@@ -7,7 +7,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', '
 
 
 const colon = dom.getElementById('colon');
-const amPm =dom.getElementById('am-pm');
+const amPm = dom.getElementById('am-pm');
 
 function flashOff() {
     colon.style.visibility = 'hidden';
@@ -25,6 +25,11 @@ let clockDay = dom.getElementById('day')
 let clockDate = dom.getElementById('date');
 let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
+
+let date = new Date();
+setInterval(() => {
+    date = new Date();
+}, 1000)
 
 setInterval(() => {
     const date = new Date();
@@ -47,9 +52,7 @@ const twentyFourHourButton = dom.getElementById('24hr')
 
 twelveHourButton.addEventListener('click', twelveHourDisplay)
 
-function twelveHourDisplay(){
-
-    let date = new Date();
+function twelveHourDisplay() {
     let hour = date.getHours() % 12 || 12;
     let hourString = hour.toString()
     if (hourString.length === 1) {
@@ -57,26 +60,17 @@ function twelveHourDisplay(){
     }
     clockHour.innerText = hourString;
 
-    if ( date.getHours() >= 12 && date.getHours() <= 23 ){
+    if (date.getHours() >= 12 && date.getHours() <= 23) {
         amPm.innerText = `PM`;
     } else {
         amPm.innerText = `AM`;
     }
-    setInterval(() => {
-        date = new Date();
-        hour = date.getHours() % 12 || 12;
-        let hourString = hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-    }, 1000)
+
 }
 
 twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
 
-function twentyFourHourDisplay(){
-    let date = new Date();
+function twentyFourHourDisplay() {
     let hour = date.getHours();
     let hourString = hour.toString()
     if (hourString.length === 1) {
@@ -84,25 +78,7 @@ function twentyFourHourDisplay(){
     }
     clockHour.innerText = hourString;
     amPm.innerText = '';
-    setInterval(() => {
-        this.date = new Date();
-        this.hour = this.date.getHours();
-        let hourString = this.hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-    }, 1000)
 }
 
-function updateHour(){
-        const date = new Date();
-        const hour = date.getHours();
-        let hourString = hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-    }
 
-    updateHour()
+twentyFourHourDisplay()
