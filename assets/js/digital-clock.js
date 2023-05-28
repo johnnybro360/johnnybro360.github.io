@@ -26,15 +26,15 @@ let clockDate = dom.getElementById('date');
 let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
 
-setInterval(() => {
-    const date = new Date();
-    const hour = date.getHours();
-    let hourString = hour.toString();
-    if (hourString.length === 1) {
-        hourString = '0' + hourString;
-    }
-    clockHour.innerText = hourString;
-}, 1000)
+// setInterval(() => {
+//     const date = new Date();
+//     const hour = date.getHours();
+//     let hourString = hour.toString();
+//     if (hourString.length === 1) {
+//         hourString = '0' + hourString;
+//     }
+//     clockHour.innerText = hourString;
+// }, 1000)
 
 setInterval(() => {
     const date = new Date();
@@ -59,8 +59,8 @@ twelveHourButton.addEventListener('click', twelveHourDisplay)
 
 function twelveHourDisplay(){
 
-    const date = new Date();
-    const hour = date.getHours() % 12 || 12;
+    let date = new Date();
+    let hour = date.getHours() % 12 || 12;
     let hourString = hour.toString()
     if (hourString.length === 1) {
         hourString = '0' + hourString;
@@ -72,17 +72,35 @@ function twelveHourDisplay(){
     } else {
         amPm.innerText = `AM`;
     }
+    setInterval(() => {
+        date = new Date();
+        hour = date.getHours();
+        let hourString = hour.toString();
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
+        }
+        clockHour.innerText = hourString;
+    }, 1000)
 }
 
 twentyFourHourButton.addEventListener('click', twentyFourHourDisplay)
 
 function twentyFourHourDisplay(){
-    const date = new Date();
-    const hour = date.getHours();
+    let date = new Date();
+    let hour = date.getHours();
     let hourString = hour.toString()
     if (hourString.length === 1) {
         hourString = '0' + hourString;
     }
     clockHour.innerText = hourString;
     amPm.innerText = '';
+    setInterval(() => {
+        date = new Date();
+        hour = date.getHours();
+        let hourString = hour.toString();
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
+        }
+        clockHour.innerText = hourString;
+    }, 1000)
 }
