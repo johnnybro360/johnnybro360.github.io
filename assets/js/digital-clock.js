@@ -85,4 +85,4 @@ setInterval(() => {
     const updateHour = displayClock(new Date());
     updateHour();
 
-}, 10000);
+}, 1000);
