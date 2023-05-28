@@ -27,7 +27,9 @@ let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
 
 setInterval(() => {
-    let hourString = hour.toString()
+    const date = new Date();
+    const hour = date.getHours();
+    let hourString = hour.toString();
     if (hourString.length === 1) {
         hourString = '0' + hourString;
     }
