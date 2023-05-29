@@ -2,8 +2,8 @@ let dom = document;
 
 
 let cityChoice = dom.getElementById('weather-select');
+const code= config.MY_CODE;
 
-const apiKey = "b45de6e3810499e2e37ff5f2655af8ff";
 const unit = "metric";
 let temp = dom.getElementById('temp');
 let description = dom.getElementById('description');
@@ -16,7 +16,7 @@ async function getWeatherDetails() {
     if (!cityName) {
         cityName = 'perth'
     }
-    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${code}&units=${unit}`)
         .then(function (resp) {
             return resp.json()
         }) // Convert data to json

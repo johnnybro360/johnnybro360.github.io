@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="../../assets/css/reset.css" rel="stylesheet">
     <link href="../../assets/css/portfolio.css" rel="stylesheet">
     <!-- JavScript -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://dev.screencraft.net.au/~parkjong/assets/js/config.js" type="application/javascript"></script>
     <script defer src="../../assets/js/weather.js" type="application/javascript"></script>
     <title>Demonstrations | Portfolio - Jonghun Park</title>
 </head>
 
 <body>
-
 <div class="content">
-
     <!-- HEADER  -->
     <header class="site-header">
         <div class="logo-box">
@@ -66,9 +65,9 @@
                 </form>
                 <section
                         class="font-['Lexend'] bg-[#FFD7F3] flex justify-around items-center mt-12 p-4 gap-4 text-[#5C3D56]">
-                    <div class="flex flex-col items-center gap-4 p-4 mx-10" id="weather">
+                    <div class="flex flex-col items-center gap-4 p-4" id="weather">
                         <p class="text-3xl text-bold" id="city-name"></p>
-                        <p class="text-6xl text-bold" id="temp"></p>
+                        <p class="text-6xl text-bold  mx-10" id="temp"></p>
                         <p class="text-xl text-bold" id="description"></p>
                     </div>
                     <img alt="weather image" class="h-40 w-60" id="weather-image" src="../../assets/img/weather/01d.svg">
