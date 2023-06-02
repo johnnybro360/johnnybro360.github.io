@@ -28,8 +28,8 @@ setInterval(flashOff, 500);
 
 setInterval(flashOn, 1000);
 
-function displayClock(newDate) {
-    const date = newDate;
+function displayClock() {
+    const date = new Date();
     const minute = date.getMinutes();
     const day = `${days[date.getDay()]}`;
     const monthDate = `${months[date.getMonth()]} ${date.getDate()}`;
@@ -41,48 +41,39 @@ function displayClock(newDate) {
     }
     clockMin.innerText = minuteString;
     if (twentyFourHourButton.checked) {
-        return function twentyFourHour() {
-            const hour = date.getHours();
-            let hourString = hour.toString()
-            if (hourString.length === 1) {
-                hourString = '0' + hourString;
-            }
-            clockHour.innerText = hourString;
-            amPm.innerText = '';
+        const hour = date.getHours();
+        let hourString = hour.toString()
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
         }
+        clockHour.innerText = hourString;
+        amPm.innerText = '';
     } else {
-        return function twelveHour() {
-            const hour = date.getHours() % 12 || 12;
-            let hourString = hour.toString()
-            if (hourString.length === 1) {
-                hourString = '0' + hourString;
-            }
-            clockHour.innerText = hourString;
-            if (date.getHours() >= 12 && date.getHours() <= 23) {
-                amPm.innerText = `PM`;
-            } else {
-                amPm.innerText = `AM`;
-            }
+        const hour = date.getHours() % 12 || 12;
+        let hourString = hour.toString()
+        if (hourString.length === 1) {
+            hourString = '0' + hourString;
+        }
+        clockHour.innerText = hourString;
+        if (date.getHours() >= 12 && date.getHours() <= 23) {
+            amPm.innerText = `PM`;
+        } else {
+            amPm.innerText = `AM`;
         }
     }
 }
 
 window.onload = () => {
-    const updateHour = displayClock(new Date());
-    updateHour();
+    displayClock();
 }
 
 twelveHourButton.addEventListener('click', () => {
-    const updateHour = displayClock(new Date());
-    updateHour();
+    displayClock();
 })
 twentyFourHourButton.addEventListener('click', () => {
-    const updateHour = displayClock(new Date());
-    updateHour();
+    displayClock();
 })
 
 setInterval(() => {
-    const updateHour = displayClock(new Date());
-    updateHour();
-
+    displayClock();
 }, 1000);
