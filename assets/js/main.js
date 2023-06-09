@@ -30,7 +30,7 @@ if (document.URL.includes("projects")) {
             <h5>The tech stack at the Verb Project consists of:</h5>
         </div>
         <ul>
-            <li>[Python(Flask),&nbsp;</li>
+            <li>[Python (Flask),&nbsp;</li>
             <li>React-Redux,&nbsp;</li>
             <li>Docker,&nbsp;</li>
             <li>AWS]</li>
@@ -43,9 +43,7 @@ if (document.URL.includes("projects")) {
         } else {
             nextButton.innerHTML = "Next>>>";
             appImage.src = "../assets/img/webapp1.png";
-
         }
-
     }
 
     if (nextButton) {
