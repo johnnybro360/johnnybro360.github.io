@@ -95,15 +95,12 @@ p {
 .site-navigation > ul {
     display: flex;
     align-items: end;
-
 }
 
 .site-navigation li a {
-
     padding: 0.9rem 1.8rem;
     display: block;
     font-size: 1.2rem;
-
 }
 
 .site-navigation li a:hover {
@@ -179,13 +176,11 @@ p {
 .main-container:hover {
     background-color: #44273F;
     color: #E4BAD9;
-    transform: scale(1.1);
 }
 
 .main-container:hover .hidden-button {
     display: flex;
     justify-content: center;
-
 }
 
 .main-container:hover button {
@@ -194,7 +189,7 @@ p {
     line-height: 2.5rem;
     color: #44273F;
     background-color: #FFD7F3;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     width: 15%;
     text-shadow: none;
 }
@@ -204,16 +199,13 @@ p {
     color: #5C3D56;
 }
 
-
 /*Contact*/
 .contact-content {
     flex: 1;
     display: grid;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: 1.5fr 1fr auto;
     grid-template-areas: "form" "map" "notice";
     font-family: "Work Sans", sans-serif;
-
-
 }
 
 .form-control {
@@ -222,79 +214,72 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 1rem 1rem;
-
 }
 
 .form-control form {
-    padding: 0 3rem;
     width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding: 0.5rem 1rem;
     color: #E4BAD9;
     background-color: #5C3D56;
 }
 
 .name-input {
-    /*border: 1px solid black;*/
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .name-input label {
-    text-align: center;
-
-    flex-grow: 1;
+    text-align: start;
+    margin-bottom: 0.3rem;
 }
 
 .name-input input {
-    text-align: center;
-
-    flex-grow: 2;
+    background-color: white;
+    color: black;
+    padding: 0.3rem 1rem;
 }
 
 .name-input input::placeholder {
-    color: #E4BAD9;
+    color: black;
 }
 
 .subject-dropdown {
-    /*border: 1px solid black;*/
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .subject-dropdown label {
-    text-align: center;
-
-    flex-grow: 1;
+    text-align: start;
+    margin-bottom: 0.3rem;
 }
 
 .subject-dropdown select {
-    color: #44273F;
-
     background-color: white;
-    text-align: center;
-    flex-grow: 2;
+    color: black;
+    padding: 0.3rem 1rem;
 }
 
 .text-content {
     display: flex;
-    align-items: flex-start;
-    /*border: 1px solid black;*/
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .text-content label {
-    text-align: center;
-
-    flex-grow: 1;
+    text-align: start;
+    margin-bottom: 0.3rem;
 }
 
 .text-content textarea {
-    flex-grow: 2;
     background-color: white;
-    color: #44273F;
-
+    color: black;
+    padding: 0.3rem 1rem;
 }
 
 
@@ -307,8 +292,7 @@ p {
 
 .submit-content {
     display: flex;
-    justify-content: flex-end;
-    /*border: 1px solid black;*/
+    justify-content: center;
 }
 
 .submit-content button {
@@ -329,7 +313,6 @@ p {
     grid-area: map;
     display: flex;
     justify-content: center;
-
 }
 
 .location-map iframe {
@@ -343,7 +326,6 @@ p {
     font-family: "Space Grotesk", sans-serif;
     text-align: center;
     color: #44273F;
-
 }
 
 
@@ -521,16 +503,16 @@ p {
 }
 
 .résumé-projects h3 {
-    text-align: center;
+    text-align: start;
     color: #5C3D56
 
 }
 
 .résumé-projects > div {
-    padding: 0.5rem 0;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     background-color: #44273F;
     color: #FFD7F3;
 }
@@ -550,8 +532,9 @@ p {
 
 .résumé-skills li {
     font-size: 0.9rem;
-    margin: 0.3rem 0.2rem;
-
+    /*margin: 0.3rem 0.2rem;*/
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.2rem 0;
 }
 
 .résumé-education {
