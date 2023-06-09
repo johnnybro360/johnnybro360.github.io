@@ -30,7 +30,7 @@ function numberEntryChanged(event) {
     event.preventDefault();
     const number = parseInt(selectList.value);
     if (!number) {
-        outputZone.innerHTML = `<p class="text text-red-500">Please select a number from 1 to 20.</p>`;
+        outputZone.innerHTML = `<p class="col-start-2 col-span-3 text text-red-500">Please select a number from 1 to 20.</p>`;
     } else {
         outputZone.innerText = '';
         const table = dom.createElement('table');
