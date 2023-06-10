@@ -15,10 +15,8 @@ let clockDay = dom.getElementById('day');
 let clockDate = dom.getElementById('date');
 let clockHour = dom.getElementById('hour');
 let clockMin = dom.getElementById('minute');
-const radios = document.querySelectorAll('input[type="radio"]');
 const twelveHourButton = dom.getElementById('12hr');
 const twentyFourHourButton = dom.getElementById('24hr');
-
 
 function flashOff() {
     colon.style.visibility = 'hidden';
@@ -45,41 +43,52 @@ function displayClock() {
         minuteString = '0' + minuteString;
     }
     clockMin.innerText = minuteString;
-    if (twentyFourHourButton.checked) {
-        const hour = date.getHours();
-        let hourString = hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-        amPm.innerText = '';
-    } else {
-        const hour = date.getHours() % 12 || 12;
-        let hourString = hour.toString();
-        if (hourString.length === 1) {
-            hourString = '0' + hourString;
-        }
-        clockHour.innerText = hourString;
-        if (date.getHours() >= 12 && date.getHours() <= 23) {
-            amPm.innerText = `PM`;
-        } else {
-            amPm.innerText = `AM`;
-        }
+}
+
+function twelveHourDisplay() {
+    const date = new Date();
+    const hour = date.getHours() % 12 || 12;
+    let hourString = hour.toString();
+    if (hourString.length === 1) {
+        hourString = '0' + hourString;
     }
+    clockHour.innerText = hourString;
+    if (date.getHours() >= 12 && date.getHours() <= 23) {
+        amPm.innerText = `PM`;
+    } else {
+        amPm.innerText = `AM`;
+    }
+}
+
+function twentyFourHourDisplay() {
+    const date = new Date();
+    const hour = date.getHours();
+    let hourString = hour.toString();
+    if (hourString.length === 1) {
+        hourString = '0' + hourString;
+    }
+    clockHour.innerText = hourString;
+    amPm.innerText = '';
 }
 
 window.onload = () => {
     displayClock();
+    twentyFourHourDisplay();
 }
 
 twelveHourButton.addEventListener('click', () => {
-    for (let radio of radios) {
-        if (radio.checked) {
-            displayClock();
-        }
-    }
+    twelveHourDisplay();
+})
+
+twentyFourHourButton.addEventListener('click', () => {
+    twentyFourHourDisplay()
 })
 
 setInterval(() => {
     displayClock();
+    if (!twelveHourButton.checked){
+        twentyFourHourDisplay();
+    } else {
+        twelveHourDisplay();
+    }
 }, 1000);
