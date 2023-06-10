@@ -92,7 +92,7 @@ twelveHourButton.addEventListener('click', () => {
 
 // Listen events when 24 hour button is clicked
 twentyFourHourButton.addEventListener('click', () => {
-    twentyFourHourDisplay()
+    twentyFourHourDisplay();
 })
 
 setInterval(() => {
