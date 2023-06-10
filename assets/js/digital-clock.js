@@ -8,7 +8,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', '
     , 'September', 'October', 'November', 'December'];
 
 
-// HTML Element
+// Select HTML Element
 const colon = dom.getElementById('colon');
 const amPm = dom.getElementById('am-pm');
 let clockDay = dom.getElementById('day');
@@ -18,6 +18,8 @@ let clockMin = dom.getElementById('minute');
 const twelveHourButton = dom.getElementById('12hr');
 const twentyFourHourButton = dom.getElementById('24hr');
 
+
+// Let 'colon' between hours and minutes flash on or off
 function flashOff() {
     colon.style.visibility = 'hidden';
 }
@@ -30,7 +32,8 @@ setInterval(flashOff, 500);
 
 setInterval(flashOn, 1000);
 
-// Display Clock
+
+// Display Clock Information except for hours
 function displayClock() {
     const date = new Date();
     const minute = date.getMinutes();
@@ -45,6 +48,7 @@ function displayClock() {
     clockMin.innerText = minuteString;
 }
 
+// Display 12Hour Style Clock
 function twelveHourDisplay() {
     const date = new Date();
     const hour = date.getHours() % 12 || 12;
@@ -60,6 +64,8 @@ function twelveHourDisplay() {
     }
 }
 
+
+// Display 24Hour Style Clock as a default setting
 function twentyFourHourDisplay() {
     const date = new Date();
     const hour = date.getHours();
@@ -71,15 +77,20 @@ function twentyFourHourDisplay() {
     amPm.innerText = '';
 }
 
+
+// Load initial data in 24 hour style as a default.
 window.onload = () => {
     displayClock();
     twentyFourHourDisplay();
 }
 
+// Listen events when 12 hour button is clicked
 twelveHourButton.addEventListener('click', () => {
     twelveHourDisplay();
 })
 
+
+// Listen events when 24 hour button is clicked
 twentyFourHourButton.addEventListener('click', () => {
     twentyFourHourDisplay()
 })
